@@ -26,8 +26,8 @@ def kategori_kalori(kal):
     else:
         return "Rendah"
 
-kmeans = joblib.load(MODEL_PATH)
-scaler = joblib.load(SCALER_PATH)
+kmeans = joblib.load('https://kipakxetfqnpinxeialy.supabase.co/storage/v1/object/sign/obsicare/model_clustering_makanan.pkl?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QzNzBjMzA4LTI5ZDUtNGFmYS1hMTFmLTM2NTFiMjdmZTU0ZSJ9.eyJ1cmwiOiJvYnNpY2FyZS9tb2RlbF9jbHVzdGVyaW5nX21ha2FuYW4ucGtsIiwiaWF0IjoxNzQ4MzM3Mzc1LCJleHAiOjE3Nzk4NzMzNzV9.Yy9BbUF6AxNFZw3i9LgdF3ZrLrWLgmztTpL0BayGfC8')
+scaler = joblib.load('https://kipakxetfqnpinxeialy.supabase.co/storage/v1/object/sign/obsicare/scaler_makanan.pkl?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QzNzBjMzA4LTI5ZDUtNGFmYS1hMTFmLTM2NTFiMjdmZTU0ZSJ9.eyJ1cmwiOiJvYnNpY2FyZS9zY2FsZXJfbWFrYW5hbi5wa2wiLCJpYXQiOjE3NDgzMzc0NjYsImV4cCI6MTc3OTg3MzQ2Nn0.AbHmz3Z0hdcAHD_BPL1laqI1YFaBuUpGmvtjgaqkV40')
 
 @router.post("/tambah_data_makanan", status_code=201)
 def tambah_makanan(data: MakananCreate, db: Session = Depends(get_db)):
